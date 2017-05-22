@@ -1,0 +1,60 @@
+<div class="mdl-card mdl-shadow--2dp mdl-cell--12-col city-weather-component">
+
+  <div class="mdl-card__title">
+    <h1 class="mdl-card__title-text display-1">{{ cityweatherdata.city.name }}</h1>
+    <h1 class="mdl-card__subtitle-text">{{ cityweatherdata.list[0].weather[0].main}}</h1>
+  </div>
+
+  <div class="mdl-card__title second">
+
+    <div class="layout-row mdl-cell mdl-cell--12-col">
+      <div class="mdl-cell mdl-cell--6-col"><strong>{{ cityweatherdata.list[0].clouds}}%</strong> Clouds present </div>
+      <div class="mdl-cell mdl-cell--6-col">HPA <strong>{{ cityweatherdata.list[0].pressure}}</strong></div>
+    </div>
+    <div class="layout-row mdl-cell mdl-cell--12-col">
+      <div class="mdl-cell mdl-cell--6-col">Wind speed is <strong>{{ cityweatherdata.list[0].speed}}</strong> meter/sec</div>
+      <div class="mdl-cell mdl-cell--6-col">Humidity is at <strong>{{ cityweatherdata.list[0].humidity}}%</strong></div>
+    </div>
+
+  </div>
+
+  <div class="mdl-card__supporting-text">
+
+    <div class="mdl-list">
+      <div class="mdl-list__item mdl-list__item--two-line"
+          *ngFor="let weather of cityweatherdata.list; let i = index;">
+
+        <div class="mdl-list__item-primary-content mdl-grid layout-row">
+          <div class="mdl-cell mdl-cell--4-col layout-row">
+            <div class="mdl-cell mdl-cell--3-col">{{ weather.date | date: 'EE '}}</div>
+            <div class="mdl-cell mdl-cell--2-col">{{ weather.date | date: 'd '}}</div>
+            <div class="mdl-cell mdl-cell--3-col">{{ weather.date | date: 'MMMM'}}</div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col">
+            <img [src]=" getICONurl(weather.weather[0].icon) " />
+          </div>
+          <!--<i class="material-icons mdl-list__item-avatar">person</i>-->
+
+          <!--<span class="mdl-list__item-sub-title">
+            <span>Clouds: {{ weather.clouds }} </span>
+            <span>degree: {{ weather.deg }} </span>
+            <span>humidity: {{ weather.humidity }} </span>
+            <span>pressure: {{ weather.pressure }} </span>
+            <span>speed: {{ weather.speed }} </span>
+          </span>-->
+          <div class="mdl-cell mdl-cell--4-col layout-row"><!--{{ weather.weather[0].main }}-->
+            <div class="max mdl-cell mdl-cell--6-col">{{ weather.temp.min | number:'1.1-1'}}&#8451;</div>
+            <div class="min mdl-cell mdl-cell--6-col">{{ weather.temp.max | number:'1.1-1'}}&#x2103;</div>
+          </div>
+        </div>
+
+        <!--<span class="mdl-list__item-secondary-content">
+          <span>{{weather.weather[0].description}}</span>
+        </span>-->
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

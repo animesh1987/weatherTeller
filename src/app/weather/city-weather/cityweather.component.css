@@ -1,0 +1,37 @@
+.layout-row{
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+/*Component specific*/
+.city-weather-component{background: #619ec4;}
+.city-weather-component.mdl-card .mdl-card__supporting-text{width: auto;}
+.mdl-card__title{justify-content: center !important; border-bottom: 1px solid white;flex-direction: column;}
+.mdl-card__title-text{color: white;font-size: 34px;align-self: center;}
+.mdl-card__subtitle-text{ color: rgba(255,255,255, 0.87); font-size: 26px; padding-top: 10px;}
+
+.mdl-card__title.second div{color: white; text-align: center;}
+.mdl-card__title.second div strong{font-size: 20px; letter-spacing: 1.5px;}
+
+.city-weather-component .mdl-list__item-primary-content{
+  position: relative;}
+
+.city-weather-component .mdl-list__item-primary-content div{
+  color: white;text-align: center;
+}
+
+.city-weather-component .mdl-list__item-primary-content div img{
+  /*padding-left: 50px;*/
+}
+
+
+.city-weather-component .mdl-list__item-primary-content
+div:last-child{text-align: end;}
+
+.city-weather-component .mdl-list__item-primary-content
+div:last-child .max{color: rgba(255,255,255,0.87);}
+
+.city-weather-component .mdl-list__item-primary-content
+div:last-child .min{color: rgba(255,255,255,0.54);}

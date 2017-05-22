@@ -1,0 +1,77 @@
+<div class="weather">
+
+  <div *ngIf="cities && cities.length == 0" class="loader-container mdl-card mdl-shadow--8dp">
+    <div class="mdl-spinner mdl-js-spinner is-active"></div>
+  </div>
+
+  <!--<div class="mdl-tabs mdl-js-tabs" *ngIf="cities.length > 0">-->
+
+    <!--<div class="mdl-tabs__tab-bar">
+      <a *ngFor="let city of cities;"
+         class="mdl-tabs__tab"
+         [href]=" '#tab-' + city.city.name ">{{city.city.name}}</a>
+    </div>
+
+    <div class="mdl-tabs__panel"
+         *ngFor="let city of cities;"
+         [id]=" 'tab-' + city.city.name">
+      <p>{{ city.city.name }}</p>
+    </div>-->
+
+
+
+    <!--<div class="mdl-tabs__tab-bar">
+      <a href="#tab-Sydney" class="mdl-tabs__tab is-active">Sydney</a>
+      <a href="#tab-Brisbane" class="mdl-tabs__tab">Brisbane</a>
+      <a href="#tab-Melbourne" class="mdl-tabs__tab">Melbourne</a>
+      <a href="#tab-Canberra" class="mdl-tabs__tab">Canberra</a>
+      <a href="#tab-Perth" class="mdl-tabs__tab">Perth</a>
+      <a href="#tab-Adelaide" class="mdl-tabs__tab">Adelaide</a>
+      <a href="#tab-Hobart" class="mdl-tabs__tab">Hobart</a>
+      <a href="#tab-Darwin" class="mdl-tabs__tab">Darwin</a>
+    </div>
+
+    <div class="mdl-tabs__panel is-active"
+         id="tab-Sydney">
+      <p>Tab 1 Content</p>
+    </div>
+    <div class="mdl-tabs__panel"
+         id="tab-Brisbane">
+      <p>Tab 2 Content</p>
+    </div>
+    <div class="mdl-tabs__panel"
+         id="tab-Melbourne">
+      <p>Tab 3 Content</p>
+    </div>
+    <div class="mdl-tabs__panel"
+         id="tab-Canberra">
+      <p>Tab 4 Content</p>
+    </div>
+    <div class="mdl-tabs__panel"
+         id="tab-Perth">
+      <p>Tab 5 Content</p>
+    </div>
+    <div class="mdl-tabs__panel"
+         id="tab-Adelaide">
+      <p>Tab 6 Content</p>
+    </div>
+    <div class="mdl-tabs__panel"
+         id="tab-Hobart">
+      <p>Tab 7 Content</p>
+    </div>
+    <div class="mdl-tabs__panel"
+         id="tab-Darwin">
+      <p>Tab 8 Content</p>
+    </div>
+-->
+  <!--</div>-->
+
+
+  <div class="mdl-grid" *ngIf="cities.length > 0">
+    <city-weather-card
+      class="mdl-cell mdl-cell--6-col"
+      *ngFor="let city of cities;"
+      [cityweatherdata]="city"></city-weather-card>
+  </div>
+
+</div>

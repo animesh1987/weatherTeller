@@ -1,0 +1,20 @@
+.weather .loader-container{
+  background: white;
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  left: calc((100% - 300px)/2);
+  top: calc((100% - 250px)/2);
+}
+
+
+
+.weather .loader-container .mdl-spinner{
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  width: 72px;
+  height: 72px;
+}
+
+.weather .mdl-tabs__tab{color: white;}
